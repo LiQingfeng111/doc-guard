@@ -1,0 +1,132 @@
+usage: novel.py [-h]
+                {init,status,draft,count,check,query,settle,retcon,export,rebuild} ...
+
+WorkBuddy 长篇网文书仓确定性工具（仅标准库）
+
+positional arguments:
+  {init,status,draft,count,check,query,settle,retcon,export,rebuild}
+    init                从模板生成书仓
+    status              从文件推导进度
+    draft               创建章节草稿骨架
+    count               统计汉字数
+    check               确定性检查
+    query               全文检索
+    settle              作者确认后定稿入档
+    retcon              设定修订留痕
+    export              导出定稿合集
+    rebuild             从文件重建 state.json
+
+options:
+  -h, --help            show this help message and exit
+
+===== init --help =====
+usage: novel.py init [-h] --root ROOT [--json] --title TITLE [--genre GENRE]
+                     [--platform PLATFORM] [--pov POV] [--min MIN]
+                     [--target TARGET] [--max MAX] [--force]
+
+options:
+  -h, --help           show this help message and exit
+  --root ROOT          书仓根目录
+  --json               输出机器可读 JSON（部分命令支持）
+  --title TITLE        书名
+  --genre GENRE        题材
+  --platform PLATFORM  目标平台
+  --pov POV            叙事人称
+  --min MIN            下限汉字数
+  --target TARGET      目标汉字数
+  --max MAX            上限汉字数
+  --force              允许覆盖 config.json（不删除已有文件）
+
+===== status --help =====
+usage: novel.py status [-h] --root ROOT [--json]
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  书仓根目录
+  --json       输出机器可读 JSON（部分命令支持）
+
+===== draft --help =====
+usage: novel.py draft [-h] --root ROOT [--json] --chapter CHAPTER
+                      [--title TITLE] [--outline-version OUTLINE_VERSION]
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT           书仓根目录
+  --json                输出机器可读 JSON（部分命令支持）
+  --chapter CHAPTER
+  --title TITLE
+  --outline-version OUTLINE_VERSION
+
+===== count --help =====
+usage: novel.py count [-h] --root ROOT [--json] --file FILE
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  书仓根目录
+  --json       输出机器可读 JSON（部分命令支持）
+  --file FILE
+
+===== check --help =====
+usage: novel.py check [-h] --root ROOT [--json] --chapter CHAPTER
+                      [--file FILE]
+
+options:
+  -h, --help         show this help message and exit
+  --root ROOT        书仓根目录
+  --json             输出机器可读 JSON（部分命令支持）
+  --chapter CHAPTER
+  --file FILE        指定待审稿，默认取最新稿
+
+===== query --help =====
+usage: novel.py query [-h] --root ROOT [--json] --term TERM
+                      [--scope {真源,正文,草稿,全部}] [--limit LIMIT]
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT           书仓根目录
+  --json                输出机器可读 JSON（部分命令支持）
+  --term TERM
+  --scope {真源,正文,草稿,全部}
+  --limit LIMIT
+
+===== settle --help =====
+usage: novel.py settle [-h] --root ROOT [--json] --chapter CHAPTER
+                       [--title TITLE] --confirm CONFIRM [--force]
+
+options:
+  -h, --help         show this help message and exit
+  --root ROOT        书仓根目录
+  --json             输出机器可读 JSON（部分命令支持）
+  --chapter CHAPTER
+  --title TITLE
+  --confirm CONFIRM  作者确认的原话或摘要，写入留痕
+  --force            作者明确批准后允许带阻断项入档
+
+===== retcon --help =====
+usage: novel.py retcon [-h] --root ROOT [--json] --note NOTE
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  书仓根目录
+  --json       输出机器可读 JSON（部分命令支持）
+  --note NOTE
+
+===== export --help =====
+usage: novel.py export [-h] --root ROOT [--json] [--volume VOLUME]
+                       [--format {txt,md}] [--force]
+
+options:
+  -h, --help         show this help message and exit
+  --root ROOT        书仓根目录
+  --json             输出机器可读 JSON（部分命令支持）
+  --volume VOLUME
+  --format {txt,md}
+  --force
+
+===== rebuild --help =====
+usage: novel.py rebuild [-h] --root ROOT [--json]
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  书仓根目录
+  --json       输出机器可读 JSON（部分命令支持）

@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "tool": "novel.py",
+  "aliases": [
+    "$P",
+    "novel.py",
+    "scripts/novel.py"
+  ],
+  "subcommands": [
+    "check",
+    "count",
+    "draft",
+    "export",
+    "init",
+    "query",
+    "rebuild",
+    "retcon",
+    "settle",
+    "status"
+  ],
+  "flags": [
+    "--chapter",
+    "--confirm",
+    "--file",
+    "--force",
+    "--format",
+    "--genre",
+    "--help",
+    "--json",
+    "--limit",
+    "--max",
+    "--min",
+    "--note",
+    "--outline-version",
+    "--platform",
+    "--pov",
+    "--root",
+    "--scope",
+    "--target",
+    "--term",
+    "--title",
+    "--volume",
+    "-h"
+  ],
+  "command_flags": {},
+  "source": "examples/help-novel.txt",
+  "captured_at": "2026-11-11 23:59:37"
+}
